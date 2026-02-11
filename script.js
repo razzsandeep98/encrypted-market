@@ -1,50 +1,25 @@
-let balance = 10;
-let yesPool = 0;
-let noPool = 0;
-let votePlaced = false;
+let balance = 20;
+let currentMarket = "";
 
-function placeBet(type){
- const amt = Number(document.getElementById("amount").value);
+function openBet(type){
+ currentMarket = type;
+ document.getElementById("popup").style.display="flex";
+}
 
- if(votePlaced){
-  status.innerText = "Bet already placed!";
-  return;
- }
+function confirmBet(){
+ let amt = Number(document.getElementById("betAmount").value);
 
- if(amt <= 0 || amt > balance){
-  status.innerText = "Invalid amount!";
+ if(amt <=0 || amt > balance){
+  alert("Invalid Amount");
   return;
  }
 
  balance -= amt;
- document.getElementById("wallet").innerText =
-  "Balance: " + balance + " SOL";
+ document.getElementById("bal").innerText = balance;
 
- if(type === "yes") yesPool += amt;
- else noPool += amt;
+ let pool = document.getElementById(currentMarket);
+ pool.innerText = Number(pool.innerText) + amt;
 
- document.getElementById("pool").innerText =
-  yesPool + noPool;
-
- votePlaced = true;
-
- status.innerText = "Stake Encrypted 🔒";
-}
-
-function reveal(){
- if(!votePlaced){
-  status.innerText = "Place bet first!";
-  return;
- }
-
- const total = yesPool + noPool;
- if(total === 0) return;
-
- const yesPercent = (yesPool / total) * 100;
-
- document.getElementById("yesBar").style.width =
-  yesPercent + "%";
-
- status.innerText =
-  "YES: " + yesPool + " SOL | NO: " + noPool + " SOL";
+ alert("Stake Encrypted 🔒");
+ document.getElementById("popup").style.display="none";
 }
