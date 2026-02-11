@@ -4,16 +4,16 @@
 <title>Encrypted Prediction Market</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <nav>
 <h2>Encrypted Markets</h2>
+<div id="wallet">Balance: 10 SOL</div>
 </nav>
 
 <section class="hero">
 <h1>Private Prediction Markets</h1>
-<p>Bet privately. Reveal fairly.</p>
+<p>Stake privately. Reveal fairly.</p>
 </section>
 
 <section class="markets">
@@ -21,17 +21,22 @@
 <div class="card">
 <h3>Will SOL hit $300?</h3>
 
-<input id="stake" placeholder="Stake amount">
+<div class="pool">Pool: <span id="pool">0</span> SOL</div>
+
+<input id="amount" placeholder="Enter Stake Amount">
 
 <div class="btns">
-<button onclick="vote('yes')">YES</button>
-<button onclick="vote('no')">NO</button>
+<button onclick="placeBet('yes')">YES</button>
+<button onclick="placeBet('no')">NO</button>
 </div>
 
 <p id="status">Waiting...</p>
 <button onclick="reveal()">Reveal Result</button>
 
-<div id="resultBar"></div>
+<div class="bar">
+<div id="yesBar"></div>
+</div>
+
 </div>
 
 </section>
