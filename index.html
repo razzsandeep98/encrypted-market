@@ -1,53 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Encrypted Markets</title>
-<link rel="stylesheet" href="style.css">
+<title>Encrypted Prediction Market</title>
+<style>
+body{
+ background:#0b0c1a;
+ color:white;
+ font-family:sans-serif;
+ margin:0;
+}
+
+header{
+ display:flex;
+ justify-content:space-between;
+ padding:15px 30px;
+ background:#111;
+}
+
+.market{
+ background:#1c1d2e;
+ padding:20px;
+ border-radius:12px;
+ width:260px;
+ margin:20px;
+}
+
+button{
+ padding:8px 14px;
+ border:none;
+ border-radius:6px;
+ cursor:pointer;
+}
+
+.yes{background:green;color:white;}
+.no{background:red;color:white;}
+
+.popup{
+ position:fixed;
+ top:0; left:0;
+ width:100%; height:100%;
+ background:rgba(0,0,0,0.8);
+ display:none;
+ justify-content:center;
+ align-items:center;
+}
+
+.popupBox{
+ background:#222;
+ padding:20px;
+ border-radius:10px;
+}
+</style>
 </head>
+
 <body>
 
-<nav>
-<div class="logo">ENCRYPTED</div>
-<input class="search" placeholder="Search Markets">
-<button class="wallet">Connect Wallet</button>
-</nav>
+<header>
+ <h2>ENCRYPTED</h2>
+ <div>Balance: <span id="bal">20</span> SOL</div>
+</header>
 
-<div class="container">
+<div style="display:flex">
 
-<div class="main">
-
-<h2>Trending Markets</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Will SOL hit $300?</h3>
-<p>Volume: 12 SOL</p>
-<div class="actions">
-<button class="yes">YES</button>
-<button class="no">NO</button>
-</div>
+<div class="market">
+ <h3>Will SOL Hit $300?</h3>
+ <p>Pool YES: <span id="solYes">0</span></p>
+ <p>Pool NO: <span id="solNo">0</span></p>
+ <button class="yes" onclick="openBet('solYes')">YES</button>
+ <button class="no" onclick="openBet('solNo')">NO</button>
 </div>
 
-<div class="card">
-<h3>BTC above 80k?</h3>
-<p>Volume: 5 SOL</p>
-<div class="actions">
-<button class="yes">YES</button>
-<button class="no">NO</button>
-</div>
-</div>
-
-</div>
-</div>
-
-<div class="side">
-<h3>New Markets</h3>
-<p>ETH Up/Down</p>
-<p>NBA Winner</p>
+<div class="market">
+ <h3>BTC Above 80k?</h3>
+ <p>Pool YES: <span id="btcYes">0</span></p>
+ <p>Pool NO: <span id="btcNo">0</span></p>
+ <button class="yes" onclick="openBet('btcYes')">YES</button>
+ <button class="no" onclick="openBet('btcNo')">NO</button>
 </div>
 
 </div>
 
+<div id="popup" class="popup">
+ <div class="popupBox">
+  <h3>Enter Stake</h3>
+  <input id="betAmount" placeholder="SOL amount">
+  <br><br>
+  <button onclick="confirmBet()">Confirm</button>
+ </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
