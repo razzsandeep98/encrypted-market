@@ -1,9 +1,8 @@
 body{
  margin:0;
  font-family:sans-serif;
- background:linear-gradient(120deg,#0b0b20,#111133);
+ background:#0b0b14;
  color:white;
- text-align:center;
 }
 
 nav{
@@ -13,47 +12,55 @@ nav{
  background:#111;
 }
 
-.hero{
- padding:60px;
+.search{
+ width:300px;
+ padding:10px;
+ border-radius:8px;
+ border:none;
+}
+
+.wallet{
+ background:#ff6a00;
+ border:none;
+ padding:10px 20px;
+ border-radius:8px;
+ color:white;
+}
+
+.container{
+ display:flex;
+}
+
+.main{
+ flex:3;
+ padding:20px;
+}
+
+.side{
+ flex:1;
+ padding:20px;
+ background:#141420;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:20px;
 }
 
 .card{
- background:rgba(255,255,255,0.05);
- backdrop-filter:blur(10px);
- width:350px;
- margin:auto;
+ background:#1a1a2a;
  padding:20px;
- border-radius:16px;
-}
-
-input{
- padding:10px;
- width:90%;
- border-radius:8px;
- border:none;
- margin-bottom:10px;
+ border-radius:12px;
 }
 
 button{
- padding:10px 20px;
+ padding:8px 14px;
  border:none;
- border-radius:8px;
- background:#7c3aed;
- color:white;
- cursor:pointer;
+ border-radius:6px;
  margin:5px;
+ cursor:pointer;
 }
 
-.bar{
- height:20px;
- background:#333;
- border-radius:10px;
- overflow:hidden;
- margin-top:10px;
-}
-
-#yesBar{
- height:100%;
- width:0%;
- background:green;
-}
+.yes{ background:green; }
+.no{ background:red; }
