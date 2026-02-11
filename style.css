@@ -1,14 +1,49 @@
 body{
- background:black;
+ margin:0;
+ font-family:sans-serif;
+ background:linear-gradient(120deg,#09091a,#0d0d25);
  color:white;
  text-align:center;
- font-family:sans-serif;
+}
+
+nav{
+ padding:20px;
+ background:#111;
+}
+
+.hero{
+ padding:80px 20px;
+}
+
+.card{
+ background:rgba(255,255,255,0.05);
+ backdrop-filter:blur(10px);
+ width:300px;
+ margin:auto;
+ padding:20px;
+ border-radius:16px;
 }
 
 button{
- padding:12px;
- background:purple;
- color:white;
+ padding:10px 20px;
  border:none;
+ border-radius:8px;
+ background:#7c3aed;
+ color:white;
+ cursor:pointer;
+}
+
+input{
+ padding:10px;
+ width:90%;
+ border-radius:8px;
+ border:none;
+ margin-bottom:10px;
+}
+
+#resultBar{
+ height:20px;
+ background:green;
+ margin-top:10px;
  border-radius:8px;
 }
