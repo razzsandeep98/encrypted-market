@@ -1,46 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Encrypted Prediction Market</title>
+<title>Encrypted Markets</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav>
-<h2>Encrypted Markets</h2>
-<div id="wallet">Balance: 10 SOL</div>
+<div class="logo">ENCRYPTED</div>
+<input class="search" placeholder="Search Markets">
+<button class="wallet">Connect Wallet</button>
 </nav>
 
-<section class="hero">
-<h1>Private Prediction Markets</h1>
-<p>Stake privately. Reveal fairly.</p>
-</section>
+<div class="container">
 
-<section class="markets">
+<div class="main">
+
+<h2>Trending Markets</h2>
+
+<div class="grid">
 
 <div class="card">
 <h3>Will SOL hit $300?</h3>
-
-<div class="pool">Pool: <span id="pool">0</span> SOL</div>
-
-<input id="amount" placeholder="Enter Stake Amount">
-
-<div class="btns">
-<button onclick="placeBet('yes')">YES</button>
-<button onclick="placeBet('no')">NO</button>
+<p>Volume: 12 SOL</p>
+<div class="actions">
+<button class="yes">YES</button>
+<button class="no">NO</button>
+</div>
 </div>
 
-<p id="status">Waiting...</p>
-<button onclick="reveal()">Reveal Result</button>
+<div class="card">
+<h3>BTC above 80k?</h3>
+<p>Volume: 5 SOL</p>
+<div class="actions">
+<button class="yes">YES</button>
+<button class="no">NO</button>
+</div>
+</div>
 
-<div class="bar">
-<div id="yesBar"></div>
+</div>
+</div>
+
+<div class="side">
+<h3>New Markets</h3>
+<p>ETH Up/Down</p>
+<p>NBA Winner</p>
 </div>
 
 </div>
 
-</section>
-
-<script src="script.js"></script>
 </body>
 </html>
