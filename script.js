@@ -1,17 +1,15 @@
-let yes=[];
-let no=[];
+let yes=0;
+let no=0;
 
-function encrypt(v){
- return btoa(v+Math.random());
-}
-
-function vote(t){
- if(t==="yes") yes.push(encrypt(t));
- else no.push(encrypt(t));
-
+function vote(type){
+ if(type==="yes") yes++;
+ else no++;
  status.innerText="Vote Encrypted 🔒";
 }
 
 function reveal(){
- status.innerText="YES:"+yes.length+" NO:"+no.length;
+ const total=yes+no;
+ const yesPercent=(yes/total)*100;
+ resultBar.style.width=yesPercent+"%";
+ status.innerText="YES "+yes+" | NO "+no;
 }
