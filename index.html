@@ -1,20 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Encrypted Market</title>
+<title>Encrypted Prediction Market</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>Encrypted Prediction Market</h1>
-<p>Private Votes Powered by Arcium</p>
+<nav>
+<h2>Encrypted Markets</h2>
+</nav>
 
+<section class="hero">
+<h1>Private Prediction Markets</h1>
+<p>Bet privately. Reveal fairly.</p>
+</section>
+
+<section class="markets">
+
+<div class="card">
+<h3>Will SOL hit $300?</h3>
+
+<input id="stake" placeholder="Stake amount">
+
+<div class="btns">
 <button onclick="vote('yes')">YES</button>
 <button onclick="vote('no')">NO</button>
+</div>
 
 <p id="status">Waiting...</p>
-<button onclick="reveal()">Reveal</button>
+<button onclick="reveal()">Reveal Result</button>
+
+<div id="resultBar"></div>
+</div>
+
+</section>
 
 <script src="script.js"></script>
 </body>
